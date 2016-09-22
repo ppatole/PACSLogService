@@ -12,7 +12,7 @@ namespace PACSLogService
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IRecordLog
     {        
-        [WebGet]
+        [WebInvoke (Method ="POST",ResponseFormat = WebMessageFormat.Xml  )]
         public void LogThis(string XMLValue)
         {
             Common.Log l = new Common.Log("PacsLog",true);
